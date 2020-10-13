@@ -1,17 +1,35 @@
 import React, { FC } from 'react';
-import 'antd/dist/antd.css';
-import { Button } from 'antd';
+import { Layout } from 'antd';
+import { createUseStyles } from 'react-jss';
+import { colors } from './styles/variables';
 
-import './App.css';
+import Header from './components/header';
 
 const App: FC = () => {
+  const { Content } = Layout;
+  const classes = useStyles();
+
   return (
     <div className="App">
-      <Button type="primary">
-        Sample Button
-      </Button>
+      <Layout className={classes.layout}>
+        <Header />
+        <Content className={classes.content}></Content>
+      </Layout>
     </div>
   );
 };
+
+const useStyles = createUseStyles({
+  layout: {
+    backgroundColor: colors.background,
+  },
+  content: {
+    display: 'flex',
+    width: 900,
+    height: 495,
+    margin: '0 auto',
+    backgroundColor: colors.txtWhite,
+  },
+});
 
 export default App;
