@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { Layout } from 'antd';
+import { Layout, Row, Col } from 'antd';
 import withStyles, { WithStylesProps } from 'react-jss';
 
 import { colors } from './styles/variables';
-
 import Header from './components/header';
+import List from './components/list/list';
 
 const App: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
   const { Content } = Layout;
@@ -13,7 +13,16 @@ const App: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
     <div className="App">
       <Layout className={classes.layout}>
         <Header />
-        <Content className={classes.content}></Content>
+        <Content className={classes.content}>
+          <Row justify="space-between" className={classes.row}>
+            <Col span={12} className={classes.column}>
+              <List />
+            </Col>
+            <Col span={12} className={classes.column}>
+              Form
+            </Col>
+          </Row>
+        </Content>
       </Layout>
     </div>
   );
@@ -24,11 +33,22 @@ const styles = {
     backgroundColor: colors.background,
   },
   content: {
-    display: 'flex',
     width: 900,
     height: 495,
     margin: '0 auto',
     backgroundColor: colors.txtWhite,
+  },
+  row: {
+    alignItems: 'stretch',
+    height: '100%',
+  },
+  column: {
+    '&:first-child': {
+      borderRight: `2px solid ${colors.primary}`,
+    },
+    '&:last-child': {
+      borderLeft: `2px solid ${colors.primary}`,
+    },
   },
 };
 
