@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import { Layout } from 'antd';
-import { createUseStyles } from 'react-jss';
+import withStyles, { WithStylesProps } from 'react-jss';
+
 import { colors } from './styles/variables';
 
 import Header from './components/header';
 
-const App: FC = () => {
+const App: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
   const { Content } = Layout;
-  const classes = useStyles();
 
   return (
     <div className="App">
@@ -19,7 +19,7 @@ const App: FC = () => {
   );
 };
 
-const useStyles = createUseStyles({
+const styles = {
   layout: {
     backgroundColor: colors.background,
   },
@@ -30,6 +30,6 @@ const useStyles = createUseStyles({
     margin: '0 auto',
     backgroundColor: colors.txtWhite,
   },
-});
+};
 
-export default App;
+export default withStyles(styles)(App);

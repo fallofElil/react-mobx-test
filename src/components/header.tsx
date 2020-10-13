@@ -1,27 +1,23 @@
 import React, { FC } from 'react';
 import { Layout, Button, Typography } from 'antd';
 import { ExportOutlined } from '@ant-design/icons';
-import { createUseStyles } from 'react-jss';
+import withStyles, { WithStylesProps } from 'react-jss';
 
 import { colors } from '../styles/variables';
 
-const Header: FC = () => {
+const Header: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
   const { Header } = Layout;
   const { Title } = Typography;
-  const classes = useStyles();
 
   return (
     <Header className={classes.header}>
       <Title>Тестовое задание</Title>
-      <Button
-        type="text"
-        icon={<ExportOutlined style={{ color: colors.txtWhite }} />}
-      />
+      <Button type="text" icon={<ExportOutlined style={{ color: colors.txtWhite }} />} />
     </Header>
   );
 };
 
-const useStyles = createUseStyles({
+const styles = {
   header: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -34,6 +30,6 @@ const useStyles = createUseStyles({
       fontSize: '2rem',
     },
   },
-});
+};
 
-export default Header;
+export default withStyles(styles)(Header);
