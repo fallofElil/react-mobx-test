@@ -23,6 +23,7 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: colors.primary,
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
     '& h1.ant-typography': {
       marginBottom: 0,
       color: colors.txtWhite,

@@ -42,12 +42,16 @@ const styles = {
   item: {
     padding: 0,
     marginBottom: '0.8rem',
+    backgroundColor: colors.background,
+    '&:hover': {
+      backgroundColor: colors.primaryLight,
+      cursor: 'pointer',
+    },
   },
   meta: {
     display: 'flex',
     justifyContent: 'start',
     alignItems: 'center',
-    backgroundColor: colors.background,
     '& .ant-list-item-meta-avatar': {
       display: 'flex',
       justifyContent: 'center',

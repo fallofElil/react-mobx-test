@@ -5,6 +5,7 @@ import withStyles, { WithStylesProps } from 'react-jss';
 import { colors } from './styles/variables';
 import Header from './components/header';
 import List from './components/list/list';
+import Form from './components/form';
 
 const App: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
   const { Content } = Layout;
@@ -19,7 +20,7 @@ const App: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
               <List />
             </Col>
             <Col span={12} className={classes.column}>
-              Form
+              <Form />
             </Col>
           </Row>
         </Content>
@@ -41,6 +42,7 @@ const styles = {
   row: {
     alignItems: 'stretch',
     height: '100%',
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
   },
   column: {
     '&:first-child': {
