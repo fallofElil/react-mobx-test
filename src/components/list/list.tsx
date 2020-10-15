@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
-import { Layout, Button, Input } from 'antd';
+import { Layout, Button, Input, List as AntList } from 'antd';
 import { PlusOutlined, DeleteOutlined, EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 import withStyles, { WithStylesProps } from 'react-jss';
+import ListItem from './list-item';
 
 const List: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
   const { Header } = Layout;
@@ -15,7 +16,11 @@ const List: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
         <Button type="primary" icon={<EyeOutlined />} />
         <Button type="primary" icon={<EyeInvisibleOutlined />} />
       </Header>
-      <div>List Content</div>
+      <AntList split={false}>
+        <ListItem title={'Заголовок'} description={'Описание'} visible={true} />
+        <ListItem title={'Заголовок'} description={'Описание'} visible={true} />
+        <ListItem title={'Заголовок'} description={'Описание'} visible={true} />
+      </AntList>
     </section>
   );
 };
@@ -23,12 +28,13 @@ const List: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
 const styles = {
   container: {
     width: '100%',
+    padding: '0 2rem',
   },
   header: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '0 2rem',
+    padding: 0,
     backgroundColor: 'white',
   },
   input: {
