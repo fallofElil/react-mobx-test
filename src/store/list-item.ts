@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { observable, action, makeObservable } from 'mobx';
 import shortid from 'shortid';
 
 export interface IListItemStore {
@@ -12,16 +12,17 @@ export interface IListItemStore {
 }
 
 class ListItemStore implements IListItemStore {
-  @observable readonly id: string;
-  @observable title: string;
-  @observable description: string;
-  @observable visible: boolean;
+  readonly id: string = shortid();
+  title = 'Нет заголовка';
+  description = '';
+  visible = true;
 
-  constructor(id: string, description: string, title: string, visible: boolean) {
-    this.id = id;
-    this.title = title;
-    this.description = description;
-    this.visible = visible;
+  constructor() {
+    makeObservable(this, {
+      title: observable,
+      description: observable,
+      visible: observable,
+    });
   }
 
   @action setDescription(description: string): void {
@@ -37,4 +38,4 @@ class ListItemStore implements IListItemStore {
   }
 }
 
-export default new ListItemStore(shortid(), '', 'Нет заголовка', true);
+export default new ListItemStore();
