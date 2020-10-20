@@ -1,7 +1,8 @@
 import { types, Instance } from 'mobx-state-tree';
 import shortid from 'shortid';
 
-type DataListItemModel = Instance<typeof DataListItem>;
+export type DataListItemModel = Instance<typeof DataListItem>;
+export type DataListModel = Instance<typeof DataList>;
 
 export const DataListItem = types.model('DataListItem', {
   id: types.identifier,
@@ -24,9 +25,9 @@ export const DataList = types
       addItem(item: DataListItemModel) {
         self.items.push({
           id: shortid(),
-          title: item.properties.title,
-          description: item.properties.description,
-          visible: item.properties.visible,
+          title: item.title,
+          description: item.description,
+          visible: item.visible,
         });
       },
     };
