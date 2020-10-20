@@ -4,7 +4,7 @@ import { IListItemStore } from './list-item';
 
 export interface IListStore {
   items: IListItemStore[];
-  addItem(item: IListItemStore): void;
+  //addItem(item: IListItemStore): void;
 }
 
 class ListStore implements IListStore {
@@ -13,13 +13,13 @@ class ListStore implements IListStore {
   constructor() {
     makeObservable(this, {
       items: observable,
-      addItem: action,
+      //addItem: action,
     });
   }
 
-  addItem(item: IListItemStore): void {
-    this.items.push(item);
-  }
+  // addItem(item: IListItemStore): void {
+  //   this.items.push(item);
+  // }
 }
 
 export default new ListStore();
