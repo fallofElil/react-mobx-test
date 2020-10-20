@@ -1,41 +1,31 @@
 import React, { FC } from 'react';
 import { Layout, Row, Col } from 'antd';
 import withStyles, { WithStylesProps } from 'react-jss';
-import { connectReduxDevtools } from 'mst-middlewares';
 
-import { createStore } from './models/createStore';
-import { StoreProvider } from './StoreProvider';
 import { colors } from './styles/variables';
 import Header from './components/header';
 import List from './components/list/list';
 import Form from './components/form';
 
 const App: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
-  const rootStore = createStore();
-
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  connectReduxDevtools(require('remotedev'), rootStore);
-
   const { Content } = Layout;
 
   return (
-    <StoreProvider value={rootStore}>
-      <div className="App">
-        <Layout className={classes.layout}>
-          <Header />
-          <Content className={classes.content}>
-            <Row justify="space-between" className={classes.row}>
-              <Col span={12} className={classes.column}>
-                <List />
-              </Col>
-              <Col span={12} className={classes.column}>
-                <Form />
-              </Col>
-            </Row>
-          </Content>
-        </Layout>
-      </div>
-    </StoreProvider>
+    <div className="App">
+      <Layout className={classes.layout}>
+        <Header />
+        <Content className={classes.content}>
+          <Row justify="space-between" className={classes.row}>
+            <Col span={12} className={classes.column}>
+              <List />
+            </Col>
+            <Col span={12} className={classes.column}>
+              <Form />
+            </Col>
+          </Row>
+        </Content>
+      </Layout>
+    </div>
   );
 };
 

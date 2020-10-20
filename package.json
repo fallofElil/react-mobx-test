@@ -15,7 +15,6 @@
     "antd": "^4.7.0",
     "mobx": "^6.0.1",
     "mobx-react": "^7.0.0",
-    "mobx-state-tree": "^3.17.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-jss": "^10.4.0",
@@ -51,8 +50,6 @@
     "@typescript-eslint/parser": "^4.4.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "mst-middlewares": "^3.17.2",
-    "prettier": "^2.1.2",
-    "remotedev": "^0.2.9"
+    "prettier": "^2.1.2"
   }
 }
