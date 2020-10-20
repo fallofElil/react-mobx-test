@@ -3,7 +3,7 @@ import { Layout, Button, Input, List as AntList } from 'antd';
 import { PlusOutlined, DeleteOutlined, EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 import withStyles, { WithStylesProps } from 'react-jss';
 import ListItem from './list-item';
-import {colors} from "../../styles/variables";
+import { colors } from '../../styles/variables';
 
 const List: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
   const { Header } = Layout;
