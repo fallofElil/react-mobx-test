@@ -15,9 +15,7 @@ const Form: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
 
         <TextArea rows={6} className={classes.field} placeholder={'Описание'} />
 
-        <Checkbox className={classes.checkbox}>
-          Видимый
-        </Checkbox>
+        <Checkbox className={classes.checkbox}>Видимый</Checkbox>
 
         <div className={classes.btnWrapper}>
           <Button className={classes.btn}>Применить</Button>

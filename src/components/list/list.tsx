@@ -2,10 +2,13 @@ import React, { FC } from 'react';
 import { Layout, Button, Input, List as AntList } from 'antd';
 import { PlusOutlined, DeleteOutlined, EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 import withStyles, { WithStylesProps } from 'react-jss';
+import { observer } from 'mobx-react';
+import { useStores } from '../../hooks/use-store';
 import ListItem from './list-item';
 import { colors } from '../../styles/variables';
 
-const List: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
+const List: FC<WithStylesProps<typeof styles>> = observer(({ classes }) => {
+  const { listItemStore } = useStores();
   const { Header } = Layout;
 
   return (
@@ -13,18 +16,20 @@ const List: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
       <Header className={classes.header}>
         <Button type="primary" icon={<PlusOutlined />} />
         <Button type="primary" icon={<DeleteOutlined />} />
-        <Input placeholder="Название название задачи" className={classes.input} />
+        <Input
+          placeholder="Название название задачи"
+          onChange={(e: any) => listItemStore.setTitle(e.target.value)}
+          className={classes.input}
+        />
         <Button type="primary" icon={<EyeOutlined />} />
         <Button type="primary" icon={<EyeInvisibleOutlined />} />
       </Header>
       <AntList split={false}>
-        <ListItem title={'Заголовок'} description={'Описание'} visible={true} />
-        <ListItem title={'Заголовок'} description={'Описание'} visible={true} />
-        <ListItem title={'Заголовок'} description={'Описание'} visible={true} />
+        <ListItem />
       </AntList>
     </section>
   );
-};
+});
 
 const styles = {
   container: {

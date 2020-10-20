@@ -2,6 +2,8 @@ import React, { FC, Fragment } from 'react';
 import { List, Checkbox } from 'antd';
 import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 import withStyles, { WithStylesProps } from 'react-jss';
+import { observer } from 'mobx-react';
+import { useStores } from '../../hooks/use-store';
 import { colors } from '../../styles/variables';
 
 interface IListItemProps extends WithStylesProps<typeof styles> {
@@ -10,8 +12,9 @@ interface IListItemProps extends WithStylesProps<typeof styles> {
   visible: boolean;
 }
 
-const ListItem: FC<IListItemProps> = (props) => {
-  const { title, description, visible, classes } = props;
+const ListItem: FC<WithStylesProps<typeof styles>> = observer((props) => {
+  const { classes } = props;
+  const { listItemStore } = useStores();
   const { Item } = List;
 
   const onCheckboxChange = (e: any): void => {
@@ -23,12 +26,12 @@ const ListItem: FC<IListItemProps> = (props) => {
     <Item className={classes.item}>
       <Item.Meta
         avatar={<Checkbox onChange={onCheckboxChange} />}
-        title={title}
+        title={listItemStore.title}
         description={
           <Fragment>
-            <p>{description}</p>
+            <p>{listItemStore.description}</p>
             <div className={classes.iconWrapper}>
-              {visible ? <EyeOutlined /> : <EyeInvisibleOutlined />}
+              {listItemStore.visible ? <EyeOutlined /> : <EyeInvisibleOutlined />}
             </div>
           </Fragment>
         }
@@ -36,7 +39,7 @@ const ListItem: FC<IListItemProps> = (props) => {
       />
     </Item>
   );
-};
+});
 
 const styles = {
   item: {
@@ -99,10 +102,10 @@ const styles = {
   },
 };
 
-ListItem.defaultProps = {
-  title: 'Нет названия',
-  description: '',
-  visible: true,
-};
+// ListItem.defaultProps = {
+//   title: 'Нет названия',
+//   description: '',
+//   visible: true,
+// };
 
 export default withStyles(styles)(ListItem);
