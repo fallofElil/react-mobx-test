@@ -1,9 +1,8 @@
 import { observable, action, makeObservable } from 'mobx';
-// import shortid from 'shortid';
-import { IListItemStore } from './list-item';
+import { IListItemStoreProps } from './list-item';
 
 export interface IListStore {
-  items: IListItemStore[];
+  items: IListItemStoreProps[];
   //addItem(item: IListItemStore): void;
 }
 
@@ -13,13 +12,13 @@ class ListStore implements IListStore {
   constructor() {
     makeObservable(this, {
       items: observable,
-      //addItem: action,
+      addItem: action,
     });
   }
 
-  // addItem(item: IListItemStore): void {
-  //   this.items.push(item);
-  // }
+  addItem(item: IListItemStoreProps): void {
+    this.items.push(item);
+  }
 }
 
 export default new ListStore();

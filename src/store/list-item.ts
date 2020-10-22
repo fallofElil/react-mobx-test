@@ -1,7 +1,7 @@
 import { observable, action, computed, makeObservable } from 'mobx';
 import shortid from 'shortid';
 
-export interface IListItemStore {
+export interface IListItemStoreProps {
   _id: string;
   _title: string;
   _description: string;
@@ -12,8 +12,8 @@ export interface IListItemStore {
   // setVisible(visible: boolean): void;
 }
 
-class ListItemStore implements IListItemStore {
-  private _initialState: IListItemStore = {
+class ListItemStore implements IListItemStoreProps {
+  private _initialState: IListItemStoreProps = {
     _id: '',
     _title: '',
     _description: '',
