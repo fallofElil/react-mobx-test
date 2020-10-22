@@ -20,10 +20,10 @@ class ListItemStore implements IListItemStoreProps {
     _visible: true,
   };
 
-  private _id: string = this._initialState._id;
-  private _title: string = this._initialState._title;
-  private _description: string = this._initialState._description;
-  private _visible: boolean = this._initialState._visible;
+  _id: string = this._initialState._id;
+  _title: string = this._initialState._title;
+  _description: string = this._initialState._description;
+  _visible: boolean = this._initialState._visible;
 
   constructor() {
     this._id = shortid();

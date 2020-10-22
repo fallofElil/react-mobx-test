@@ -1,4 +1,4 @@
-import { observable, action, makeObservable } from 'mobx';
+import { observable, makeObservable } from 'mobx';
 import { IListItemStoreProps } from './list-item';
 
 export interface IListStore {
@@ -12,13 +12,12 @@ class ListStore implements IListStore {
   constructor() {
     makeObservable(this, {
       items: observable,
-      addItem: action,
     });
   }
 
-  addItem(item: IListItemStoreProps): void {
-    this.items.push(item);
-  }
+  // addItem(item: IListItemStoreProps): void {
+  //   this.items.push(item);
+  // }
 }
 
 export default new ListStore();
