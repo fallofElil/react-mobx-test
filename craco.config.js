@@ -8,7 +8,7 @@ module.exports = {
     {
       plugin: CracoAntDesignPlugin,
       options: {
-        customizeThemeLessPath: path.join(__dirname, 'src/styles/theme-customize.less'),
+        customizeThemeLessPath: path.join(__dirname, 'src/less/themes/theme-main.less'),
       },
     },
   ],

@@ -4,7 +4,7 @@ import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 import withStyles, { WithStylesProps } from 'react-jss';
 import { observer } from 'mobx-react';
 import { useStores } from '../../hooks/use-store';
-import { colors } from '../../styles/variables';
+import { colors } from '../../less/variables';
 
 interface IListItemProps extends WithStylesProps<typeof styles> {
   title: string;

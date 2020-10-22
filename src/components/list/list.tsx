@@ -5,7 +5,7 @@ import withStyles, { WithStylesProps } from 'react-jss';
 import { observer } from 'mobx-react';
 import { useStores } from '../../hooks/use-store';
 import ListItem from './list-item';
-import { colors } from '../../styles/variables';
+import { colors } from '../../less/variables';
 
 const List: FC<WithStylesProps<typeof styles>> = observer(({ classes }) => {
   const { listItemStore } = useStores();

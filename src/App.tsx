@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Layout, Row, Col } from 'antd';
 import withStyles, { WithStylesProps } from 'react-jss';
 
-import { colors } from './styles/variables';
+import { colors } from './less/variables';
 import Header from './components/header';
 import List from './components/list/list';
 import Form from './components/form';

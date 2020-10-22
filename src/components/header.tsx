@@ -3,7 +3,7 @@ import { Layout, Button, Typography } from 'antd';
 import { ExportOutlined } from '@ant-design/icons';
 import withStyles, { WithStylesProps } from 'react-jss';
 
-import { colors } from '../styles/variables';
+import { colors } from '../less/variables';
 
 const Header: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
   const { Header } = Layout;
