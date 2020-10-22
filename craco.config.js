@@ -1,6 +1,7 @@
 /* eslint-disable */
 const path = require('path');
 const CracoAntDesignPlugin = require('craco-antd');
+const antdTheme = require('./src/styles/antd-theme');
 /* eslint-enable */
 
 module.exports = {
@@ -8,7 +9,10 @@ module.exports = {
     {
       plugin: CracoAntDesignPlugin,
       options: {
-        customizeThemeLessPath: path.join(__dirname, 'src/less/themes/theme-main.less'),
+        customizeTheme: {
+          ...antdTheme,
+        },
+        //customizeThemeLessPath: path.join(__dirname, 'src/less/themes/theme-main.less'),
       },
     },
   ],

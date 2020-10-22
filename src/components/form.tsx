@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Typography, Input, Checkbox, Button } from 'antd';
 import withStyles, { WithStylesProps } from 'react-jss';
-import { colors } from '../less/variables';
+import { colors } from '../styles/variables';
 
 const Form: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
   const { Title } = Typography;
