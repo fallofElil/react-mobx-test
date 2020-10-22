@@ -11,7 +11,7 @@ const Header: FC = () => {
 
   return (
     <Header className={'header'}>
-      <Title className={'header_title'}>Тестовое задание</Title>
+      <Title className={'title'}>Тестовое задание</Title>
       <Button type="text" icon={<ExportOutlined style={{ color: colors.txtWhite }} />} />
     </Header>
   );
