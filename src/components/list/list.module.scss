@@ -1,0 +1,23 @@
+@import 'src/styles/variables';
+
+.container {
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  background-color: white;
+}
+
+.input {
+  width: 250px;
+  background-color: $primary-light;
+  border-bottom-color: $primary-color;
+  &::placeholder {
+    color: #4e9097;
+  }
+}
