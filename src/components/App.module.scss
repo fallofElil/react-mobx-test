@@ -1,0 +1,27 @@
+@import 'src/styles/variables';
+
+.layout {
+  background-color: $background;
+}
+
+.content {
+  width: 900px;
+  height: 495px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.row {
+  align-items: stretch;
+  height: 100%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.column {
+  &:first-child {
+    border-right: 2px solid $primary-color;
+  }
+  &:last-child {
+    border-left: 2px solid $primary-color;
+  }
+}

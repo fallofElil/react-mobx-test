@@ -1,25 +1,24 @@
 import React, { FC } from 'react';
 import { Layout, Row, Col } from 'antd';
-import withStyles, { WithStylesProps } from 'react-jss';
 
-import { colors } from '../styles/variables';
 import Header from './header/header';
 import List from './list/list';
 import Form from './form/form';
+import styles from './App.module.scss';
 
-const App: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
+const App: FC = () => {
   const { Content } = Layout;
 
   return (
     <div className="App">
-      <Layout className={classes.layout}>
+      <Layout className={styles.layout}>
         <Header />
-        <Content className={classes.content}>
-          <Row justify="space-between" className={classes.row}>
-            <Col span={12} className={classes.column}>
+        <Content className={styles.content}>
+          <Row justify="space-between" className={styles.row}>
+            <Col span={12} className={styles.column}>
               <List />
             </Col>
-            <Col span={12} className={classes.column}>
+            <Col span={12} className={styles.column}>
               <Form />
             </Col>
           </Row>
@@ -29,29 +28,4 @@ const App: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
   );
 };
 
-const styles = {
-  layout: {
-    backgroundColor: colors.background,
-  },
-  content: {
-    width: 900,
-    height: 495,
-    margin: '0 auto',
-    backgroundColor: colors.txtWhite,
-  },
-  row: {
-    alignItems: 'stretch',
-    height: '100%',
-    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-  },
-  column: {
-    '&:first-child': {
-      borderRight: `2px solid ${colors.primary}`,
-    },
-    '&:last-child': {
-      borderLeft: `2px solid ${colors.primary}`,
-    },
-  },
-};
-
-export default withStyles(styles)(App);
+export default App;
