@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 import { Layout, Row, Col } from 'antd';
 import withStyles, { WithStylesProps } from 'react-jss';
 
-import { colors } from './styles/variables';
-import Header from './components/header/header';
-import List from './components/list/list';
-import Form from './components/form';
+import { colors } from '../styles/variables';
+import Header from './header/header';
+import List from './list/list';
+import Form from './form/form';
 
 const App: FC<WithStylesProps<typeof styles>> = ({ classes }) => {
   const { Content } = Layout;

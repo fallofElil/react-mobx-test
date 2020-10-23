@@ -1,0 +1,40 @@
+@import 'src/styles/variables';
+
+.wrapper {
+  padding: 20px 2rem;
+}
+
+.title {
+  color: $txt-dark;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.field {
+  margin-bottom: 16px;
+  background-color: $primary-light;
+  border-color: $primary-color;
+  &::placeholder {
+    color: #4e9097;
+  }
+}
+
+.checkbox {
+  margin-bottom: 2rem;
+  color: $txt-dark;
+}
+
+.btn {
+  width: 174px;
+  background-color: $background-light;
+  color: $txt-dark;
+  &:hover {
+    background-color: $primary-light;
+    border-color: $primary-light;
+  }
+}
