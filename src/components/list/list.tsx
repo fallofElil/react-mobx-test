@@ -4,7 +4,7 @@ import { PlusOutlined, DeleteOutlined, EyeOutlined, EyeInvisibleOutlined } from 
 import withStyles, { WithStylesProps } from 'react-jss';
 import { observer } from 'mobx-react';
 import { useStores } from '../../hooks/use-store';
-import ListItem from './list-item';
+import ListItem from './list-item/list-item';
 import { colors } from '../../styles/variables';
 
 const List: FC<WithStylesProps<typeof styles>> = observer(({ classes }) => {

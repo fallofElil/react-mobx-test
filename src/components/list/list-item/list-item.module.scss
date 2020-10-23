@@ -1,0 +1,64 @@
+@import 'src/styles/variables';
+
+.item {
+  padding: 0;
+  margin-bottom: 0.8rem;
+  background-color: $background;
+  &:hover {
+    background-color: $primary-light;
+  }
+}
+
+.meta {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  .ant-list-item-meta-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    margin-right: 0;
+  }
+
+  .ant-list-item-meta-content {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .ant-list-item-meta-title {
+    width: 138px;
+    padding-left: 1rem;
+    margin-bottom: 0;
+    line-height: 1em;
+    color: white;
+  }
+
+  .ant-list-item-meta-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+
+    p {
+      width: 190px;
+      padding-left: 1rem;
+      line-height: 1em;
+      margin-bottom: 0;
+      color: white;
+    }
+  }
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  margin-left: auto;
+  font-size: 1.6rem;
+  color: white;
+}
