@@ -19,7 +19,7 @@ const Form: FC = () => {
 
         <Checkbox className={styles.checkbox}>Видимый</Checkbox>
 
-        <div className={styles.btnWrapper}>
+        <div className={styles.btn_wrapper}>
           <Button className={styles.btn}>Применить</Button>
           <Button className={styles.btn}>Отменить</Button>
         </div>

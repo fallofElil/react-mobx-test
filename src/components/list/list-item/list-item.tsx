@@ -5,6 +5,7 @@ import { observer } from 'mobx-react';
 
 import { useStores } from '../../../hooks/use-store';
 import styles from './list-item.module.scss';
+import './antd-custom.scss';
 
 const ListItem: FC = observer(() => {
   const { listItemStore } = useStores();
@@ -23,7 +24,7 @@ const ListItem: FC = observer(() => {
         description={
           <Fragment>
             <p>{listItemStore.description}</p>
-            <div className={styles.iconWrapper}>
+            <div className={styles.icon_wrapper}>
               {listItemStore.visible ? <EyeOutlined /> : <EyeInvisibleOutlined />}
             </div>
           </Fragment>

@@ -10,7 +10,7 @@ const App: FC = () => {
   const { Content } = Layout;
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <Layout className={styles.layout}>
         <Header />
         <Content className={styles.content}>

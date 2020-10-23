@@ -1,5 +1,9 @@
 @import 'src/styles/variables';
 
+.App {
+  height: 100%;
+}
+
 .layout {
   background-color: $background;
 }
