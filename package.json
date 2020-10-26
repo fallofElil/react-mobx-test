@@ -15,8 +15,6 @@
     "@types/react-dom": "^16.9.8",
     "antd": "^4.7.2",
     "craco-antd": "^1.19.0",
-    "mobx": "^6.0.1",
-    "mobx-react": "^7.0.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
