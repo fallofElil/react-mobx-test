@@ -5,10 +5,11 @@ import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 import styles from './list-item.module.scss';
 import './antd-custom.scss';
 
-const ListItem: FC = () => {
-  const { Item } = List;
+type ListItemProps = ListItem;
 
-  const tempState = true;
+const ListItem: FC<ListItemProps> = (props) => {
+  const { title, description, visible } = props;
+  const { Item } = List;
 
   const onCheckboxChange = (e: any): void => {
     const eTargetChecked = (e.target as HTMLInputElement).checked;
@@ -19,11 +20,11 @@ const ListItem: FC = () => {
     <Item className={styles.item}>
       <Item.Meta
         avatar={<Checkbox onChange={onCheckboxChange} />}
-        title={''}
+        title={title}
         description={
           <Fragment>
-            <p>{''}</p>
-            <div className={styles.icon_wrapper}>{tempState ? <EyeOutlined /> : <EyeInvisibleOutlined />}</div>
+            <p>{description}</p>
+            <div className={styles.icon_wrapper}>{visible ? <EyeOutlined /> : <EyeInvisibleOutlined />}</div>
           </Fragment>
         }
         className={styles.meta}

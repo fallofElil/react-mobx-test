@@ -1,11 +1,14 @@
 import React, { FC } from 'react';
+import { useSelector } from 'react-redux';
 import { Layout, Button, Input, List as AntList } from 'antd';
 import { PlusOutlined, DeleteOutlined, EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 
 import ListItem from './list-item/list-item';
 import styles from './list.module.scss';
+import { RootState } from '../../store/store';
 
 const List: FC = () => {
+  const { items } = useSelector((state: RootState) => state.list);
   const { Header } = Layout;
 
   return (
@@ -22,7 +25,8 @@ const List: FC = () => {
         <Button type="primary" icon={<EyeInvisibleOutlined />} />
       </Header>
       <AntList split={false}>
-        <ListItem />
+        {/*{items.map((item: ListItem) => (*/}
+        {/*))}*/}
       </AntList>
     </section>
   );
