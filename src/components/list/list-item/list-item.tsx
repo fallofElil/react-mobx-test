@@ -1,15 +1,14 @@
 import React, { FC, Fragment } from 'react';
 import { List, Checkbox } from 'antd';
 import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
-import { observer } from 'mobx-react';
 
-import { useStores } from '../../../hooks/use-store';
 import styles from './list-item.module.scss';
 import './antd-custom.scss';
 
-const ListItem: FC = observer(() => {
-  const { listItemStore } = useStores();
+const ListItem: FC = () => {
   const { Item } = List;
+
+  const tempState = true;
 
   const onCheckboxChange = (e: any): void => {
     const eTargetChecked = (e.target as HTMLInputElement).checked;
@@ -20,20 +19,18 @@ const ListItem: FC = observer(() => {
     <Item className={styles.item}>
       <Item.Meta
         avatar={<Checkbox onChange={onCheckboxChange} />}
-        title={listItemStore.title}
+        title={''}
         description={
           <Fragment>
-            <p>{listItemStore.description}</p>
-            <div className={styles.icon_wrapper}>
-              {listItemStore.visible ? <EyeOutlined /> : <EyeInvisibleOutlined />}
-            </div>
+            <p>{''}</p>
+            <div className={styles.icon_wrapper}>{tempState ? <EyeOutlined /> : <EyeInvisibleOutlined />}</div>
           </Fragment>
         }
         className={styles.meta}
       />
     </Item>
   );
-});
+};
 
 // ListItem.defaultProps = {
 //   title: 'Нет названия',

@@ -1,14 +1,11 @@
 import React, { FC } from 'react';
 import { Layout, Button, Input, List as AntList } from 'antd';
 import { PlusOutlined, DeleteOutlined, EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
-import { observer } from 'mobx-react';
 
-import { useStores } from '../../hooks/use-store';
 import ListItem from './list-item/list-item';
 import styles from './list.module.scss';
 
-const List: FC = observer(() => {
-  const { listItemStore } = useStores();
+const List: FC = () => {
   const { Header } = Layout;
 
   return (
@@ -18,7 +15,7 @@ const List: FC = observer(() => {
         <Button type="primary" icon={<DeleteOutlined />} />
         <Input
           placeholder="Название название задачи"
-          onChange={(e: any) => listItemStore.setTitle(e.target.value)}
+          onChange={(e: any) => console.log(e)}
           className={styles.input}
         />
         <Button type="primary" icon={<EyeOutlined />} />
@@ -29,6 +26,6 @@ const List: FC = observer(() => {
       </AntList>
     </section>
   );
-});
+};
 
 export default List;
